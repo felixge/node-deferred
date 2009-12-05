@@ -14,22 +14,16 @@ d.callback('hello');
 
 
 // Some random API sugar thinking I've been doing, please ignore:
-
-// db.query('SELECT 1')
-//   ('result1', function(result1) {
-//     return db.query('SELECT 2');
-//   })
-//   ('result2', function(result2) {
-//     return db.query('SELECT 3');
-//   })
-//   ('result3')(function(results) {
+// (collection)
+//   ('result1', db.query('SELECT 1'))
+//   ('result2', db.query('SELECT 2'))
+//   ('result3', db.query('SELECT 3'))
+//   .addCallback(function() {
 //     p(results); // == {result1: result1, result2: result2, result3: result}
-//   })
+//   });
 //   .addErrback(function() {
 //    // If anything goes wrong in this chain, catch it here!
 //   });
-// 
-// 
 // 
 // db
 //   .query('SELECT 1')
